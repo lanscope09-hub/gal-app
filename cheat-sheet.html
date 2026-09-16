@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAL 考前衝刺・終極速記寶典</title>
+<style>
+  :root {
+    --primary: #3b82f6;
+    --primary-light: #60a5fa;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-alt: #334155;
+    --border: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #f59e0b;
+    --success: #10b981;
+    --danger: #ef4444;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px 16px 80px 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  header {
+    text-align: center;
+    padding: 20px 0 25px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 25px;
+  }
+  h1 {
+    font-size: 1.6em;
+    color: #38bdf8;
+    margin: 0 0 10px 0;
+  }
+  .badge {
+    display: inline-block;
+    background: #1e3a8a;
+    color: #93c5fd;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    margin-bottom: 10px;
+  }
+  .sub-desc {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .nav-bar {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 10px 0 15px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    scrollbar-width: none;
+  }
+  .nav-bar::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    white-space: nowrap;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82em;
+    text-decoration: none;
+    border: 1px solid var(--border);
+  }
+  .nav-btn:hover, .nav-btn:active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+  section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 18px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-size: 1.25em;
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 8px;
+  }
+  h3 {
+    font-size: 1.05em;
+    color: var(--primary-light);
+    margin: 18px 0 8px 0;
+  }
+  p, li {
+    font-size: 0.92em;
+  }
+  ul {
+    padding-left: 20px;
+    margin: 8px 0;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  .key {
+    color: #fbbf24;
+    font-weight: 700;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+  }
+  .tag {
+    display: inline-block;
+    background: #0284c7;
+    color: #fff;
+    font-size: 0.75em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.85em;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--bg-card-alt);
+    color: #38bdf8;
+  }
+  .box {
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin: 12px 0;
+    font-size: 0.88em;
+  }
+  .box-tip {
+    background: rgba(16, 185, 129, 0.12);
+    border-left: 4px solid var(--success);
+    color: #a7f3d0;
+  }
+  .box-warn {
+    background: rgba(239, 68, 68, 0.12);
+    border-left: 4px solid var(--danger);
+    color: #fca5a5;
+  }
+  .box-rule {
+    background: rgba(59, 130, 246, 0.12);
+    border-left: 4px solid var(--primary);
+    color: #bfdbfe;
+  }
+  .footer-links {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.88em;
+  }
+  .footer-links a {
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <span class="badge">Google Cloud GAL 備考衝刺</span>
+    <h1>GAL 考前衝刺・終極速記寶典</h1>
+    <p class="sub-desc">倒數衝刺專用・非工程師直覺邏輯・看到鑰匙字直接秒殺</p>
+  </header>
+
+  <div class="nav-bar">
+    <a href="#s0" class="nav-btn">新舊改名</a>
+    <a href="#s1" class="nav-btn">1. AI家族</a>
+    <a href="#s2" class="nav-btn">2. 基礎模型</a>
+    <a href="#s3" class="nav-btn">3. 四大毛病</a>
+    <a href="#s4" class="nav-btn">4. Prompt技巧</a>
+    <a href="#s5" class="nav-btn">5. 超參數</a>
+    <a href="#s6" class="nav-btn">6. Agent代理</a>
+    <a href="#s7" class="nav-btn">7. 平台工具</a>
+    <a href="#s8" class="nav-btn">8. 客服四件套</a>
+    <a href="#s9" class="nav-btn">9. 負責任AI</a>
+    <a href="#s10" class="nav-btn">10. 導入策略</a>
+    <a href="#s11" class="nav-btn">秒殺口訣</a>
+  </div>
+
+  <!-- S0: 改名 -->
+  <section id="s0">
+    <h2>🧭 0. 產品新舊名稱速查（考場考新名/短名）</h2>
+    <div class="box box-rule">考場遇到這幾個舊名字，請自動腦補成新短名：</div>
+    <table>
+      <tr><th>考古舊名</th><th>考場新名</th><th>核心人設</th></tr>
+      <tr><td>Vertex AI</td><td><b>Agent Platform</b></td><td>Google Cloud 的 AI 開發底座</td></tr>
+      <tr><td>Vertex AI Studio</td><td><b>Agent Studio</b></td><td>無程式碼 Prompt 原型測試環境</td></tr>
+      <tr><td>Vertex AI Search</td><td><b>Agent Search</b></td><td>企業搜尋，專查自家文件（內建 RAG）</td></tr>
+      <tr><td>Agentspace</td><td><b>Gemini Enterprise</b></td><td>企業級員工 AI 辦公門戶</td></tr>
+      <tr><td>NotebookLM</td><td><b>Gemini Notebook</b></td><td>個人研究筆記，只根據上傳文件回答</td></tr>
+      <tr><td>Dialogflow CX</td><td><b>Conversational Agents</b></td><td>第一線面對客戶的自動對話/語音機器人</td></tr>
+    </table>
+  </section>
+
+  <!-- S1: AI家族樹 -->
+  <section id="s1">
+    <h2>🌳 1. AI 家族樹與學習法</h2>
+    <p><b>包含關係</b>：AI（人工智慧）⊃ ML（機器學習）⊃ DL（深度學習，神經網絡）⊃ GenAI（生成式 AI）。</p>
+    <p><b>GenAI 定義</b>：<span class="key">create new content and ideas</span>（文字、圖片、音樂、程式碼），重點在「創造新內容」，不是做純預測。</p>
+    <p><b>Diffusion Model（擴散模型）</b>：Imagen 底層技術，關鍵字是 <span class="key">refining noise into structured data</span>（把隨機雜訊一步步精煉成結構化圖片）。</p>
+
+    <h3>三大學習法（認資料型態）</h3>
+    <ul>
+      <li><span class="tag">監督式 Supervised</span> 資料有標籤、有人工註記。看到 <span class="key">labeled data</span>、<span class="key">manually tagged</span>、<span class="key">predict based on past data</span> ➔ 選 Supervised。</li>
+      <li><span class="tag">非監督式 Unsupervised</span> 資料<b>沒有標籤</b>。模型自己找自然分群或異常。看到 <span class="key">unlabeled</span>、<span class="key">natural groupings</span>、<span class="key">anomaly detection</span> ➔ 選 Unsupervised。</li>
+      <li><span class="tag">強化學習 Reinforcement</span> 沒有標準答案，靠環境中試錯。看到 <span class="key">trial and error</span>、<span class="key">positive/negative score</span>、<span class="key">reward</span> ➔ 選 Reinforcement。</li>
+    </ul>
+
+    <h3>資料型態</h3>
+    <ul>
+      <li><b>Structured（結構化）</b>：表格、資料庫、數字（行列清楚）。</li>
+      <li><b>Unstructured（非結構化）</b>：自由長篇文字（<span class="key">open-ended text</span>）、照片、影片、音訊。</li>
+    </ul>
+  </section>
+
+  <!-- S2: 基礎模型與家族 -->
+  <section id="s2">
+    <h2>🏛️ 2. 基礎模型與 Google 模型家族</h2>
+    <ul>
+      <li><b>Foundation Model（基礎模型）</b>：海量資料預先訓練好的「通才」大模型，具備多任務泛化能力。</li>
+      <li><b>Multimodal（多模態）</b>：原生同時看懂處理<b>文字、音訊、圖片、影片、程式碼</b>（Gemini 原生特性）。</li>
+    </ul>
+    <h3>Google 模型家族</h3>
+    <ul>
+      <li><b>Gemini</b>：旗艦多模態閉源大模型（Google 全能王）。</li>
+      <li><b>Gemma</b>：<b>開源、輕量級模型（Open Weights）</b>。看到「自架環境、重視隱私、成本敏感、客製化權重」➔ 選 Gemma。</li>
+      <li><b>Imagen</b>：文字生成圖片（Text-to-Image）。</li>
+      <li><b>Veo</b>：文字/圖片生成高品質影片（Text-to-Video）。</li>
+    </ul>
+    <h3>運算晶片</h3>
+    <ul>
+      <li><b>TPU（Tensor Processing Unit）</b>：Google 專為神經網絡與矩陣運算設計的專用晶片（ASIC），訓練大模型省電又極速。</li>
+      <li><b>GPU</b>：通用圖形運算晶片，支援各類平行計算。</li>
+    </ul>
+  </section>
+
+  <!-- S3: 四大毛病與解法 -->
+  <section id="s3">
+    <h2>👻 3. 模型的四大毛病與解法（考試必出！）</h2>
+    <table>
+      <tr><th>毛病</th><th>特徵與比喻</th><th>決勝關鍵字</th><th>標準解法</th></tr>
+      <tr>
+        <td><b>Hallucination</b><br>（幻覺）</td>
+        <td>無中生有編故事，還講得很篤定</td>
+        <td><span class="key">confidently states</span><br><span class="key">entirely fictional</span><br><span class="key">presents as factual</span></td>
+        <td><b>Grounding / RAG</b><br>（給真實依據出處）</td>
+      </tr>
+      <tr>
+        <td><b>Knowledge cutoff</b><br>（知識截止）</td>
+        <td>訓練截止日之後的事，它不知道</td>
+        <td><span class="key">not present in training data</span><br><span class="key">outdated</span></td>
+        <td><b>RAG</b><br>（檢索外部最新資料庫）</td>
+      </tr>
+      <tr>
+        <td><b>Data dependency / Bias</b><br>（資料依賴／偏誤）</td>
+        <td>訓練資料本身失衡、過時、有偏見，輸出跟著歪</td>
+        <td><span class="key">disproportionately</span><br><span class="key">underrepresented</span></td>
+        <td><b>換／補齊訓練資料</b><br><small style="color:var(--danger)">（RAG 和調參數都無效！）</small></td>
+      </tr>
+      <tr>
+        <td><b>讀不懂語氣</b><br>（諷刺／反諷）</td>
+        <td>聽不懂話中有話，把反諷當稱讚</td>
+        <td><span class="key">misinterprets sarcasm</span><br><span class="key">satire</span><br><span class="key">nuanced opinions</span></td>
+        <td><b>Human-in-the-loop (HITL)</b><br><small style="color:#a7f3d0">（加真人審查，機器沒救）</small></td>
+      </tr>
+    </table>
+
+    <div class="box box-tip">
+      <b>🔍 接地資料在哪裡？兩秒判斷：</b><br>
+      - 資料在<b>公開網路即時新聞</b> ➔ <b>Grounding with Google Search</b><br>
+      - 資料是<b>公司自家內部規章/手冊</b> ➔ <b>Agent Search（舊 Vertex AI Search）或 RAG</b>
+    </div>
+  </section>
+
+  <!-- S4: Prompt 技巧 -->
+  <section id="s4">
+    <h2>✍️ 4. Prompt 提示詞工程技巧</h2>
+    <ul>
+      <li><b>Zero-shot</b>：零範例，直接命令（<span class="key">no examples</span>）。</li>
+      <li><b>One-shot / Few-shot</b>：給一個或少數幾個範例（<span class="key">provide examples</span>）。</li>
+      <li><b>Role Prompting</b>：設定角色與受眾（<span class="key">act as</span>、<span class="key">persona</span>）。</li>
+      <li><b>Chain-of-Thought (CoT) 思維鏈</b>：叫模型「一步步思考」（<span class="key">step-by-step reasoning</span>），解決複雜邏輯與數學。</li>
+      <li><b>Prompt Chaining 提示鏈</b>：大任務拆步驟，前一步輸出當下一步輸入（<span class="key">output becomes input</span>）。</li>
+      <li><b>ReAct</b>：邊思考邊用工具（<span class="key">synergy of reasoning and acting</span>）。</li>
+    </ul>
+  </section>
+
+  <!-- S5: 超參數 -->
+  <section id="s5">
+    <h2>🎛️ 5. 超參數調校（Hyperparameters）</h2>
+    <ul>
+      <li><b>Temperature（溫度）</b>：控制隨機性與創意（0 ~ 1）。
+        <ul>
+          <li><b>低溫（0 ~ 0.2）</b>：嚴謹、固定、不可亂編 ➔ 寫程式、合約審查、事實問答、摘要。</li>
+          <li><b>高溫（0.8 ~ 1.0）</b>：天馬行空、多樣性 ➔ 寫小說、創意行銷。</li>
+        </ul>
+        <div class="box box-warn">⚠️ <b>考場陷阱</b>：模型產生幻覺、看不懂諷刺，選項寫「調高溫度」絕對是錯的！調高只會胡扯得更嚴重。</div>
+      </li>
+      <li><b>Top-P（核採樣）</b>：從累積機率排名前 P% 的候選詞庫挑選。</li>
+      <li><b>Safety Settings</b>：過濾仇恨、暴力等有害內容。</li>
+    </ul>
+  </section>
+
+  <!-- S6: Agent 代理 -->
+  <section id="s6">
+    <h2>🤖 6. Agent 代理人世界與多代理系統</h2>
+    <ul>
+      <li><b>Agent（代理人）</b>：大模型 ＋ 工具調用（APIs）＋ 自主規劃。能代表人類執行具體行動。</li>
+      <li><b>Multi-Agent System（多代理系統）</b>：
+        <ul>
+          <li><b>核心概念</b>：多個專門特化的 Agent 彼此分工協調。</li>
+          <li><b>決勝關鍵字</b>：<span class="key">complex tasks</span> ＋ <span class="key">coordinated AI functions</span>。</li>
+          <li><b>淘汰誘餌</b>：選項寫「單純固定規則（rule-based repetitive）」或「合併成單一無差別模型（single undifferentiated）」一律淘汰！</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- S7: 平台工具 -->
+  <section id="s7">
+    <h2>🧰 7. Agent Platform（原 Vertex AI）核心工具</h2>
+    <ul>
+      <li><b>Model Garden（模型花園）</b>：模型超市。提供 Google 自家、開源（Llama, Gemma）、第三方合作模型。</li>
+      <li><b>Agent Studio（舊 Vertex AI Studio）</b>：無程式碼/低程式碼 Prompt 原型設計與調參環境。</li>
+      <li><b>Model Registry（模型登記處）</b>：管理追蹤自訓/微調模型的版本庫。</li>
+      <li><b>Agent Search（舊 Vertex AI Search）</b>：企業內部搜尋，專門串公司文件，提供 Pre-built RAG。</li>
+    </ul>
+  </section>
+
+  <!-- S8: 客服四件套 -->
+  <section id="s8">
+    <h2>🎧 8. 客服四件套與實用產品</h2>
+    <ul>
+      <li><b>Agent Assist（客服真人助手）</b>：在真人客服通話時，於螢幕<b>即時跳出建議與手冊</b>，通話結束後<b>自動總結</b>。關鍵字：<span class="key">assist human agents in real-time</span>。</li>
+      <li><b>Conversational Agents（舊 Dialogflow CX）</b>：第一線自動處理客戶問題的<b>AI 聊天/語音機器人</b>。關鍵字：<span class="key">virtual agent</span>、<span class="key">automated customer self-service</span>。</li>
+      <li><b>Conversational Insights（對話分析）</b>：通話<b>事後大數據分析</b>。分析成千上萬通錄音的主題與客戶抱怨趨勢。關鍵字：<span class="key">analyze call logs</span>、<span class="key">customer sentiment trends</span>。</li>
+      <li><b>Document AI</b>：從紙本掃描、PDF、發票、合約中抓取欄位與表格資料。</li>
+      <li><b>Gemini Notebook（舊 NotebookLM）</b>：個人研究筆記，只依據上傳的研究資料問答。</li>
+    </ul>
+  </section>
+
+  <!-- S9: 負責任 AI -->
+  <section id="s9">
+    <h2>🛡️ 9. 負責任 AI（Responsible AI）與資安</h2>
+    <ul>
+      <li><b>Explainability（可解釋性）</b>：能說清楚模型決策的理由。在<b>貸款、醫療、求職篩選</b>等高風險領域是法規必備。</li>
+      <li><b>Transparency（透明度）</b>：誠實告知使用者正在與 AI 互動；圖片加 SynthID 浮水印。</li>
+      <li><b>Fairness / Bias（公平性）</b>：避免對少數族群造成不公平待遇。</li>
+      <li><b>PII 去識別化</b>：遮蔽個人身分識別資訊（身分證號、信用卡號）。</li>
+      <li><b>SAIF（Secure AI Framework）</b>：Google 的 AI 資安指導框架。</li>
+      <li><b>Security Command Center (SCC)</b>：Google Cloud 的中央資安監控中心。</li>
+    </ul>
+  </section>
+
+  <!-- S10: 導入策略 -->
+  <section id="s10">
+    <h2>💼 10. 企業導入策略與決策</h2>
+    <ul>
+      <li><b>Problem-First（痛點優先）</b>：企業導入 AI 第一步，永遠是<b>先釐清具體商業問題（determine business problem first）</b>，不是先選模型。</li>
+      <li><b>導入階梯（由輕到重）</b>：現成 API ➔ Prompt + RAG ➔ Fine-tuning 微調 ➔ 從頭自訓（極少需要）。</li>
+      <li><b>Open Approach（開放架構）</b>：避免被單一廠商綁死（avoid vendor lock-in）。</li>
+      <li><b>Rule-based 三題考點秒辨析</b>：
+        <ul>
+          <li>交給傳統自動化？➔ 重複且規則固定（<span class="key">repetitive rule-based</span>）。</li>
+          <li>絕對不能給 GenAI？➔ 結果必須絕對固定不變的合規審核引擎。</li>
+          <li>交給 Multi-agent？➔ 複雜且需要多方協調的任務（<span class="key">complex & coordinated</span>）。</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- S11: 秒殺口訣 -->
+  <section id="s11">
+    <h2>⚡ 考場 3 秒反射記憶口訣</h2>
+    <ul>
+      <li>看到 <b>創造新內容</b> ➔ <b>Generative AI</b></li>
+      <li>看到 <b>雜訊精煉成圖</b> ➔ <b>Diffusion Model</b></li>
+      <li>看到 <b>有標籤、有人工註記</b> ➔ <b>Supervised</b></li>
+      <li>看到 <b>無標籤、自然分群</b> ➔ <b>Unsupervised</b></li>
+      <li>看到 <b>獎懲、試錯闖關</b> ➔ <b>Reinforcement</b></li>
+      <li>看到 <b>開源、自架、輕量</b> ➔ <b>Gemma</b></li>
+      <li>看到 <b>大模型胡扯當真事</b> ➔ <b>Hallucination</b></li>
+      <li>看到 <b>資料太舊追不上</b> ➔ <b>Knowledge cutoff ➔ 用 RAG 補</b></li>
+      <li>看到 <b>讀不懂反諷、諷刺</b> ➔ <b>Human-in-the-loop (HITL)</b></li>
+      <li>看到 <b>只准用官方文件、避免胡扯</b> ➔ <b>Grounding</b></li>
+      <li>看到 <b>查公開網路即時新聞</b> ➔ <b>Grounding with Google Search</b></li>
+      <li>看到 <b>查公司自家手冊規章</b> ➔ <b>Agent Search / RAG</b></li>
+      <li>看到 <b>一步步推理複雜問題</b> ➔ <b>Chain-of-Thought (CoT)</b></li>
+      <li>看到 <b>多專家分工協調</b> ➔ <b>Multi-agent system</b></li>
+      <li>看到 <b>即時輔助真人客服、總結通話</b> ➔ <b>Agent Assist</b></li>
+      <li>看到 <b>第一線自動客服對話機器人</b> ➔ <b>Conversational Agents</b></li>
+      <li>看到 <b>紙本合約/發票抓欄位</b> ➔ <b>Document AI</b></li>
+      <li>看到 <b>高風險決策說清理由</b> ➔ <b>Explainability</b></li>
+      <li>看到 <b>企業導入第一步</b> ➔ <b>先釐清商業痛點（Problem-First）</b></li>
+    </ul>
+  </section>
+
+  <div class="footer-links">
+    <a href="index.html">⬅️ 回刷題卡</a> |
+    <a href="course.html">📚 互動課程</a>
+  </div>
+</div>
+</body>
+</html>
